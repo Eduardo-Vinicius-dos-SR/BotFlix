@@ -5,6 +5,10 @@
 		align-items: center;
 	}
 
+	.movie-card {
+		margin: 0 20px;
+	}
+
 	.movie-poster img,
 	.no-poster {
 		height: 220px;
@@ -33,11 +37,6 @@
 @media (max-width: 900px) {
 	.movies-grid {
 		gap: 19px;
-	}
-
-	.movie-card {
-		width: 90vw;
-		max-width: 400px;
 	}
 
 	.movie-poster img,

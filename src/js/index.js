@@ -32,9 +32,7 @@ async function handleSearch() {
 		body: JSON.stringify({ userPrompt: mood }),
 	});
 
-	console.log(await response.json());
 	const data = await response.json();
-	console.log(data);
 
 	if (data && data.results.length > 0) {
 		const movie = data.results[0];
@@ -47,12 +45,12 @@ async function handleSearch() {
 
 		moviesGrid.innerHTML = `
          <div class="movie-card">
-            <img src="${posterUrl}" alt= "${movie.title}"
+            <img src="${posterUrl}" alt="${movie.title}" class="movie-poster">
          </div>
          <div class="movie-info">
             <div class="movie-title">${movie.title}</div>
             <div class="movie-overview">${movie.overview || "Sem descrição."}</div>
-            <div class="movie-rating">⭐ ${movie.vote_average.toFixed() || "N/A"} / 10</div>
+            <div class="movie-rating">⭐ $${movie.vote_average ? movie.vote_average.toFixed(1) : "N/A"} / 10</div>
          </div>
          
       `;
